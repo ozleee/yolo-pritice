@@ -1,0 +1,3 @@
+ultralytics>=8.4.215,<9
+opencv-python>=4.8,<6
+numpy>=1.23
