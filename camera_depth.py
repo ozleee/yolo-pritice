@@ -76,6 +76,10 @@ def main():
                     label = f'{name} ~{value*100:.1f}cm (est)' if value is not None else f'{name} N/A'
                     cv2.rectangle(frame,(x1,y1),(x2,y2),(0,220,0),2)
                     cv2.putText(frame,label,(x1,max(20,y1-8)),cv2.FONT_HERSHEY_SIMPLEX,.55,(0,220,0),2)
+                    confidence_label = f'置信度: {float(box.conf.item()):.1%}'
+                    confidence_y = min(frame.shape[0] - 8, max(44, y1 + 22))
+                    cv2.putText(frame, confidence_label, (x1, confidence_y),
+                                cv2.FONT_HERSHEY_SIMPLEX, .55, (0, 0, 255), 2)
             now = time.monotonic()
             if now-last_print >= 1:
                 print(json.dumps(items,ensure_ascii=False),flush=True)

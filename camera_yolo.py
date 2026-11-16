@@ -100,11 +100,14 @@ def main():
                     z = distance_cm(focal, widths[name], x2 - x1)
                 detections.append(dict(name=name, confidence=confidence,
                                        xyxy=[x1, y1, x2, y2], distance_cm=z, clipped=clipped))
-                label = f'{name} {confidence:.2f} | ' + (f'Z~{z:.1f}cm' if z else 'distance N/A')
+                label = f'{name} | ' + (f'Z~{z:.1f}cm' if z else 'distance N/A')
                 color = (0, 220, 0) if z else (0, 190, 255)
                 cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)), color, 2)
                 cv2.putText(frame, label, (int(x1), max(20, int(y1)-8)),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.55, color, 2)
+                confidence_y = min(h - 8, max(44, int(y1) + 22))
+                cv2.putText(frame, f'Conf: {confidence:.1%}', (int(x1), confidence_y),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 255), 2)
             if args.calibrate:
                 targets = [d for d in detections if d['name'] == args.calibrate]
                 if len(targets) == 1 and not targets[0]['clipped']:
