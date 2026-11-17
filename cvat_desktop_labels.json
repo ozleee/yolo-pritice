@@ -1,0 +1,52 @@
+[
+  {
+    "name": "digital_watch",
+    "type": "polygon",
+    "attributes": []
+  },
+  {
+    "name": "monitor",
+    "type": "polygon",
+    "attributes": []
+  },
+  {
+    "name": "cell_phone",
+    "type": "polygon",
+    "attributes": []
+  },
+  {
+    "name": "glue_stick",
+    "type": "polygon",
+    "attributes": []
+  },
+  {
+    "name": "ink_bottle",
+    "type": "polygon",
+    "attributes": []
+  },
+  {
+    "name": "headphones",
+    "type": "polygon",
+    "attributes": []
+  },
+  {
+    "name": "nail_clipper",
+    "type": "polygon",
+    "attributes": []
+  },
+  {
+    "name": "stapler",
+    "type": "polygon",
+    "attributes": []
+  },
+  {
+    "name": "cup",
+    "type": "polygon",
+    "attributes": []
+  },
+  {
+    "name": "pen_holder",
+    "type": "polygon",
+    "attributes": []
+  }
+]
